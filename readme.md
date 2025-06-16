@@ -1,19 +1,36 @@
-# Jira Ticket Assitant
+# Jira Ticket Assistant
 
-## Summary {#summary}
+1. [Summary](#summary)  
+    a. [Components](#components)  
+2. [Jira Ticket Assistant GPT](##jira-ticket-assistant-gpt)  
+    a. [Instructions](#instructions)  
+    b. [Conversation Starters](#conversation-starters)  
+    c. [Actions](#actions)  
+3. [Atlassian Jira Tenant](#atlassian-jira-tenant)  
+4. [Atlassian Jira OAuth 2.0 App](#atlassian-jira-oauth-20-app)  
+5. [Jira Ticket Assistant Proxy Service](#jira-ticket-assistant-proxy-service)  
+    a. [Technologies](#technologies)  
+    b. [Dependencies](#depencencies)  
+    c. [Endpoints](#endpoints)  
+
+## Summary
+
+[Top](#jira-ticket-assistant)  
 
 The goal of this project is to create a professional AI assistant that assists end users with submitting and managing their Jira tickets. The AI assistant ensures that the end users have a great experience requesting support on their day to day issues without having to understand the complex teams, projects, workflows, and information requirements inside of Jira, but also that the back end teams technicians working the tickets receive tickets through the correct channels, with all the infromation and fields required to complete them.
 
 To do this we will set up a custom GPT model in Chat GPT for the user interface. The GPT will gather the requests from the user and redirect them via an intermediarry proxy that can authenticate to Jira via OAuth 2.0 and call Jira API endpoints. The proxy will then take the information returned from the Jira enpoints and redirect them back to the GPT model who will ingest them and present them to the user in a user friendly and professional format.
 
-### Components {#summary-components}
+### Components
 
 - Jira Ticket Assistant (OpenAI Custom GPT)
 - Atlassian Jira Tenant
 - Atlassion Jira OAuth 2.0 App
 - Jira Ticket Assistant Proxy Service (Custom Backend written in Python and SQLite)
 
-## Jira Ticket Assistant {#summary-jira_ticket_assistant}
+## Jira Ticket Assistant GPT
+
+[Top](#jira-ticket-assistant)  
 
 This is a custom GPT created in OpenAI ChatGPT's custom GPT builder.
 
@@ -53,11 +70,15 @@ GPT Actions are limited to 30 actions
   - From historical ticket data
   - From chat description
 
-## Atlassian Jira Tenant {summary-atlassian_jira_tenant}
+## Atlassian Jira Tenant
+
+[Top](#jira-ticket-assistant)  
 
 Jira tenant consisting of software and service desk tickets that can be created, read, updated, and deleted.
 
-## Atlassian Jira OAuth 2.0 App {summary-atlassian_jira_oauth_app}
+## Atlassian Jira OAuth 2.0 App
+
+[Top](#jira-ticket-assistant)  
 
 This is a custom OAuth app within Jira
 
@@ -71,7 +92,9 @@ This is a custom OAuth app within Jira
 
 `http://localhost:8000/oauth/callback`
 
-## Jira Ticket Assistant Proxy Service {summary-jira_assistant_proxy_service}
+## Jira Ticket Assistant Proxy Service
+
+[Top](#jira-ticket-assistant)
 
 ### Technologies
 
